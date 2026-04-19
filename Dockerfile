@@ -19,3 +19,6 @@ RUN composer install --no-dev --optimize-autoloader
 
 # Klasör izinlerini ayarla
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+
+# En alt satıra ekle:
+CMD php artisan migrate --force && apache2-foreground
