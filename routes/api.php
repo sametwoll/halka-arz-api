@@ -19,7 +19,7 @@ Route::prefix('ipos')->group(function () {
 Route::get('/botu-calistir', function () {
     try {
         // Komutun adı senin sistemindeki botun adıdır (app:scrape-ipos gibi)
-        Artisan::call('app:scrape-ipos'); 
+        Artisan::call('ipo:fetch'); 
         return response()->json([
             'success' => true,
             'message' => 'Basgan, bot calisti ve veritabanina veriler basariyla yazildi!'
